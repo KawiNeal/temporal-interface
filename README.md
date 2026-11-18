@@ -144,11 +144,3 @@ app/api_client.py     HTTP client, models, error normalisation, cache
 app/ui.py             the interface
 tests/                client unit tests (no network)
 ```
-
-## Known limitations / next steps
-
-- The API has no "list all parts" or "where used" endpoint, so "other usages" only covers nodes already loaded in the tree.
-- Unit of measure is editable through the API but not yet in the UI.
-- Live updates cover changes made through this server. Changes made elsewhere (Swagger, other systems) appear when a node is selected or the tree is reloaded. Covering those needs polling, or change events from the backend.
-- Live updates and the part cache live in one server process. Running several processes would need a shared channel such as Redis pub/sub.
-- Next additions: deep links to a serial number or part, keyboard navigation, and UI tests with NiceGUI's `User` test fixture.
